@@ -515,14 +515,15 @@ h1, h2, h3, h4, h5, h6 {
 .hamburger-btn.active span:nth-child(2) { opacity: 0; }
 .hamburger-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile Dropdown Nav */
+/* Mobile Dropdown Nav - High Fidelity Screenshot Format */
 .mobile-nav {
     display: none;
     flex-direction: column;
-    background: #1A1C1B;
+    background: #040108; /* Deep luxury solid dark background */
     border-top: 1px solid var(--border-subtle);
-    padding: 15px 24px 25px;
-    gap: 12px;
+    padding: 0; /* Edge to edge block color highlights */
+    gap: 0;
+    width: 100%;
 }
 
 .mobile-nav.open {
@@ -530,15 +531,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-link {
-    padding: 12px 0;
-    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
     font-size: 1.05rem;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Block highlight state exactly matching format layout */
+.mobile-nav-link.active-highlight,
+.mobile-nav-link:hover {
+    background: var(--lime) !important;
+    color: #000000 !important;
+    text-shadow: none;
 }
 
 .mobile-nav-footer {
-    margin-top: 15px;
+    padding: 20px 24px;
+    background: #000000;
+    text-align: center;
 }
 
 .mobile-phone {
