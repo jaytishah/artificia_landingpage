@@ -4459,8 +4459,10 @@ h1, h2, h3, h4, h5, h6 {
    Certifications & Why Choose Artificia
    ========================================================================== */
 .certifications-section {
-    padding: 50px 0;
-    background: linear-gradient(to bottom, #080012, #000000);
+    padding: 80px 0;
+    background: #06090e; /* Premium matte dark steel division background */
+    border-top: 1px solid rgba(174, 213, 52, 0.15);
+    border-bottom: 1px solid rgba(174, 213, 52, 0.15);
 }
 
 .cert-split-container {
