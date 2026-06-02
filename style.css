@@ -7044,3 +7044,19 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 50px !important;
     }
 }
+
+/* ==========================================================================
+   Force Mobile Menu Toggle Breakpoint to 1024px to Prevent Overlaps
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .desktop-nav, 
+    .nav-ctas .btn-readiness, 
+    .nav-phone,
+    .nav-ctas .btn-primary-sm {
+        display: none !important;
+    }
+    
+    .hamburger-btn {
+        display: flex !important;
+    }
+}
