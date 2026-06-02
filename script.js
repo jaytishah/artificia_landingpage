@@ -4,7 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Premium Preloader Overlay Control (2.6s Delay + Slide Up Reveal)
+    // 0. Premium Preloader Overlay Control (Optimized 1.2s Delay + Slide Up Reveal)
     const preloader = document.getElementById('preloader');
     if (preloader) {
         setTimeout(() => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 preloader.remove();
             }, 850); // Clear element after transition finishes
-        }, 2600);
+        }, 1200);
     }
 
     // 1. Mobile Navigation Menu Toggle
@@ -96,6 +96,13 @@ function toggleMenu() {
    2. Interactive Neural network Background Canvas
    ========================================================================== */
 function initNeuralCanvas() {
+    // Performance Optimization: Disable heavy particle calculations on mobile viewports (< 768px)
+    if (window.innerWidth < 768) {
+        const canvas = document.getElementById('neuralCanvas');
+        if (canvas) canvas.style.display = 'none';
+        return;
+    }
+
     const canvas = document.getElementById('neuralCanvas');
     if (!canvas) return;
 
