@@ -909,28 +909,28 @@ function initTestimonialsSlider() {
             name: "Dr. Rajesh Shah",
             title: "Director of Operations",
             company: "Apex Healthcare Hospital Group",
-            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&h=150&q=80"
         },
         {
             text: "Artificia completely rebuilt our inventory tracking reporting pipelines. The custom n8n and ChatGPT assistant systems built by our staff paid for the program in less than 3 weeks.",
             name: "Sanjay Mehta",
             title: "Managing Director",
             company: "Mehta Auto Components & Manufacturing",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?auto=format&fit=crop&w=150&h=150&q=80"
         },
         {
             text: "Our IT development acceleration rates doubled within weeks of integrating their custom coding copilot modules. Developers onboard faster, and our technical drafts are 100% standardized.",
             name: "Priyanka Joshi",
             title: "VP of Engineering",
             company: "Vibrant Core Tech Solutions",
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=150&h=150&q=80"
         },
         {
             text: "As an MSME, hiring expensive consultants was out of the question. Artificia trained our sales and HR managers to construct custom automations. Highly practical outcome-oriented program.",
             name: "Anil Patel",
             title: "Founder",
             company: "Patel Exports & Logistics",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=150&h=150&q=80"
         }
     ];
 
