@@ -916,21 +916,21 @@ function initTestimonialsSlider() {
             name: "Sanjay Mehta",
             title: "Managing Director",
             company: "Mehta Auto Components & Manufacturing",
-            image: "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=150&h=150&q=80"
         },
         {
             text: "Our IT development acceleration rates doubled within weeks of integrating their custom coding copilot modules. Developers onboard faster, and our technical drafts are 100% standardized.",
             name: "Priyanka Joshi",
             title: "VP of Engineering",
             company: "Vibrant Core Tech Solutions",
-            image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=150&h=150&q=80"
         },
         {
             text: "As an MSME, hiring expensive consultants was out of the question. Artificia trained our sales and HR managers to construct custom automations. Highly practical outcome-oriented program.",
             name: "Anil Patel",
             title: "Founder",
             company: "Patel Exports & Logistics",
-            image: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&w=150&h=150&q=80"
         }
     ];
 
