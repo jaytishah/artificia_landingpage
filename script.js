@@ -916,7 +916,7 @@ function initTestimonialsSlider() {
             name: "Sanjay Mehta",
             title: "Managing Director",
             company: "Mehta Auto Components & Manufacturing",
-            image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80"
         },
         {
             text: "Our IT development acceleration rates doubled within weeks of integrating their custom coding copilot modules. Developers onboard faster, and our technical drafts are 100% standardized.",
@@ -930,7 +930,7 @@ function initTestimonialsSlider() {
             name: "Anil Patel",
             title: "Founder",
             company: "Patel Exports & Logistics",
-            image: "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&w=150&h=150&q=80"
+            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80"
         }
     ];
 
