@@ -1804,15 +1804,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="cObjective">Primary Objective *</label>
-                            <select id="cObjective" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer;">
-                                <option value="" disabled selected>Select Primary Objective</option>
-                                <option value="Workflow Automation">Automate Repetitive Workflows</option>
-                                <option value="Workforce Upskilling">Upskill Team Members on AI</option>
-                                <option value="Custom AI Chatbots">Build Custom AI Agents / Chatbots</option>
-                                <option value="n8n/Make Integration">Integrate n8n / Make / APIs</option>
-                                <option value="Other">Other / Custom Strategy</option>
-                            </select>
+                            <label style="margin-bottom: 8px; font-weight: 700; color: rgba(255,255,255,0.95);">Primary Objective *</label>
+                            <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="Workflow Automation" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Automate Repetitive Workflows</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="Workforce Upskilling" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Upskill Team Members on AI</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="Custom AI Chatbots" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Build Custom AI Agents / Chatbots</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="n8n/Make Integration" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Integrate n8n / Make / APIs</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="Other" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Other / Custom Strategy</label>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -2046,15 +2045,14 @@
                 </div>
 
                 <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                    <label for="mbObjective" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Primary Objective *</label>
-                    <select id="mbObjective" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                        <option value="" disabled selected>Select Primary Objective</option>
-                        <option value="Workflow Automation">Automate Repetitive Workflows</option>
-                        <option value="Workforce Upskilling">Upskill Team Members on AI</option>
-                        <option value="Custom AI Chatbots">Build Custom AI Agents / Chatbots</option>
-                        <option value="n8n/Make Integration">Integrate n8n / Make / APIs</option>
-                        <option value="Other">Other / Custom Strategy</option>
-                    </select>
+                    <label style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block; margin-bottom: 5px;">Primary Objective *</label>
+                    <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="Workflow Automation" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Automate Repetitive Workflows</label>
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="Workforce Upskilling" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Upskill Team Members on AI</label>
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="Custom AI Chatbots" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Build Custom AI Agents / Chatbots</label>
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="n8n/Make Integration" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Integrate n8n / Make / APIs</label>
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="Other" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Other / Custom Strategy</label>
+                    </div>
                 </div>
 
                 <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
@@ -2292,15 +2290,14 @@
                         </div>
 
                         <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                            <label for="eObjective" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Primary Objective *</label>
-                            <select id="eObjective" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                                <option value="" disabled selected>Select Primary Objective</option>
-                                <option value="Workflow Automation">Automate Repetitive Workflows</option>
-                                <option value="Workforce Upskilling">Upskill Team Members on AI</option>
-                                <option value="Custom AI Chatbots">Build Custom AI Agents / Chatbots</option>
-                                <option value="n8n/Make Integration">Integrate n8n / Make / APIs</option>
-                                <option value="Other">Other / Custom Strategy</option>
-                            </select>
+                            <label style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block; margin-bottom: 5px;">Primary Objective *</label>
+                            <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="Workflow Automation" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Automate Repetitive Workflows</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="Workforce Upskilling" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Upskill Team Members on AI</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="Custom AI Chatbots" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Build Custom AI Agents / Chatbots</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="n8n/Make Integration" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Integrate n8n / Make / APIs</label>
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="Other" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Other / Custom Strategy</label>
+                            </div>
                         </div>
 
                         <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
