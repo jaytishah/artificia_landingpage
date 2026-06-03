@@ -7108,5 +7108,6 @@ h1, h2, h3, h4, h5, h6 {
     .pipeline-node {
         padding: 18px 15px !important;
         gap: 8px !important;
+        min-height: auto !important; /* Shrink height to fit actual text dynamically on mobile */
     }
 }
