@@ -7111,3 +7111,66 @@ h1, h2, h3, h4, h5, h6 {
         min-height: auto !important; /* Shrink height to fit actual text dynamically on mobile */
     }
 }
+
+/* ==========================================================================
+   Interactive Swipeable Outcomes Slider overrides for mobile
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Transform outcomes grid into a premium snapping horizontal swiper */
+    .outcomes-dashboard-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        padding: 10px 20px 25px !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .outcomes-dashboard-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .outcome-dashboard-card {
+        flex: 0 0 85% !important;
+        max-width: 85% !important;
+        scroll-snap-align: center !important;
+        margin: 0 auto;
+    }
+}
+
+/* Custom interactive swipe indicators */
+.swipe-indicator-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.animate-swipe {
+    animation: swipeLeftRight 1.5s ease-in-out infinite;
+}
+
+@keyframes swipeLeftRight {
+    0% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    100% { transform: translateX(-4px); }
+}
+
+@media (max-width: 768px) {
+    .swipe-indicator-container {
+        display: inline-flex;
+        width: 100%;
+        text-align: center;
+    }
+}
