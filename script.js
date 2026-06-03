@@ -3,6 +3,26 @@
  * Fully self-contained, high-performance interactions, calculators, quizzes, and animations.
  */
 
+/* ==========================================================================
+   Lead Submission to n8n Webhook → Google Sheets
+   ========================================================================== */
+const N8N_WEBHOOK_URL = 'https://miniature-ugt6x.crab.containers.automata.host/webhook-test/corporate-ai-training-lead';
+
+async function submitToN8N(data) {
+    try {
+        const response = await fetch(N8N_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return true;
+    } catch (err) {
+        console.error('[Artificia] Lead submission error:', err);
+        return true;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 0. Premium Preloader Overlay Control (Optimized 1.2s Delay + Slide Up Reveal)
     const preloader = document.getElementById('preloader');
@@ -1095,9 +1115,32 @@ function initFormsHandler() {
     const cForm = document.getElementById('consultationForm');
     const cSuccess = document.getElementById('consultSuccess');
     if (cForm && cSuccess) {
-        cForm.addEventListener('submit', (e) => {
+        cForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            // Client-side visual success transformation
+            const btn = cForm.querySelector('button[type="submit"]');
+            const origText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            btn.disabled = true;
+
+            await submitToN8N({
+                formSource: 'Main Consultation Form',
+                name: document.getElementById('cName').value,
+                email: document.getElementById('cEmail').value,
+                phone: document.getElementById('cPhone').value,
+                company: document.getElementById('cCompany').value,
+                designation: document.getElementById('cDesignation').value,
+                industry: document.getElementById('cIndustry').value,
+                teamSize: document.getElementById('cTeamSize').value,
+                trainCount: document.getElementById('cTrainCount').value,
+                adoption: document.getElementById('cAdoption').value,
+                timeline: document.getElementById('cTimeline').value,
+                location: document.getElementById('cLocation').value,
+                address: document.getElementById('cAddress').value,
+                objectives: Array.from(document.querySelectorAll('input[name="cObjective"]:checked')).map(cb => cb.value).join(', '),
+                challenge: document.getElementById('cChallenge').value,
+                quizScore: ''
+            });
+
             cForm.style.opacity = '0';
             setTimeout(() => {
                 cForm.classList.add('hidden');
@@ -1110,8 +1153,32 @@ function initFormsHandler() {
     const eForm = document.getElementById('exitForm');
     const eSuccess = document.getElementById('exitSuccess');
     if (eForm && eSuccess) {
-        eForm.addEventListener('submit', (e) => {
+        eForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const btn = eForm.querySelector('button[type="submit"]');
+            const origText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            btn.disabled = true;
+
+            await submitToN8N({
+                formSource: 'Exit Intent Popup',
+                name: document.getElementById('eName').value,
+                email: document.getElementById('eEmail').value,
+                phone: document.getElementById('ePhone').value,
+                company: document.getElementById('eCompany').value,
+                designation: document.getElementById('eDesignation').value,
+                industry: document.getElementById('eIndustry').value,
+                teamSize: document.getElementById('eTeamSize').value,
+                trainCount: document.getElementById('eTrainCount').value,
+                adoption: document.getElementById('eAdoption').value,
+                timeline: document.getElementById('eTimeline').value,
+                location: document.getElementById('eLocation').value,
+                address: document.getElementById('eAddress').value,
+                objectives: Array.from(document.querySelectorAll('input[name="eObjective"]:checked')).map(cb => cb.value).join(', '),
+                challenge: document.getElementById('eChallenge').value,
+                quizScore: ''
+            });
+
             eForm.style.opacity = '0';
             setTimeout(() => {
                 eForm.classList.add('hidden');
@@ -1216,8 +1283,32 @@ function initReadinessQuiz() {
     const qFormWrapper = document.getElementById('quizLeadFormWrapper');
 
     if (qLeadForm && qSuccessBox && qFormWrapper) {
-        qLeadForm.addEventListener('submit', (e) => {
+        qLeadForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const btn = qLeadForm.querySelector('button[type="submit"]');
+            const origText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            await submitToN8N({
+                formSource: 'AI Readiness Quiz',
+                name: document.getElementById('qName').value,
+                email: '',
+                phone: document.getElementById('qPhone').value,
+                company: '',
+                designation: '',
+                industry: '',
+                teamSize: '',
+                trainCount: '',
+                adoption: '',
+                timeline: '',
+                location: '',
+                address: '',
+                objectives: '',
+                challenge: '',
+                quizScore: document.getElementById('quizScoreVal')?.innerText || ''
+            });
+
             qLeadForm.style.opacity = '0';
             setTimeout(() => {
                 qFormWrapper.classList.add('hidden');
@@ -1552,8 +1643,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const bForm = document.getElementById('modalBookingForm');
     const bSuccess = document.getElementById('bookingModalSuccess');
     if (bForm && bSuccess) {
-        bForm.addEventListener('submit', (e) => {
+        bForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const btn = bForm.querySelector('button[type="submit"]');
+            const origText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            btn.disabled = true;
+
+            await submitToN8N({
+                formSource: 'Booking Modal',
+                name: document.getElementById('mbName').value,
+                email: document.getElementById('mbEmail').value,
+                phone: document.getElementById('mbPhone').value,
+                company: document.getElementById('mbCompany').value,
+                designation: document.getElementById('mbDesignation').value,
+                industry: document.getElementById('mbIndustry').value,
+                teamSize: document.getElementById('mbTeamSize').value,
+                trainCount: document.getElementById('mbTrainCount').value,
+                adoption: document.getElementById('mbAdoption').value,
+                timeline: document.getElementById('mbTimeline').value,
+                location: document.getElementById('mbLocation').value,
+                address: document.getElementById('mbAddress').value,
+                objectives: Array.from(document.querySelectorAll('input[name="mbObjective"]:checked')).map(cb => cb.value).join(', '),
+                challenge: document.getElementById('mbChallenge').value,
+                quizScore: ''
+            });
+
             bForm.style.opacity = '0';
             setTimeout(() => {
                 bForm.classList.add('hidden');
