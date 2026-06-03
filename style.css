@@ -5357,10 +5357,12 @@ h1, h2, h3, h4, h5, h6 {
 .faq-section {
     position: relative;
     padding: 100px 0;
-    background: linear-gradient(to bottom, rgba(4, 0, 10, 0.72), rgba(0, 0, 0, 0.8)), 
+    background: linear-gradient(to bottom, rgba(2, 8, 2, 0.88), rgba(174, 213, 52, 0.16)), 
                 url('https://images.unsplash.com/photo-1552581230-c0159146269a?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    border-top: 1px solid rgba(174, 213, 52, 0.25);
+    border-bottom: 1px solid rgba(174, 213, 52, 0.25);
 }
 
 .faq-grid-container {
