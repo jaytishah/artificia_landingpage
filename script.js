@@ -1043,7 +1043,10 @@ function initFAQs() {
         }
     ];
 
-    faqs.forEach((faq, idx) => {
+    // Mobile Content Pruning: Show top 4 most critical FAQs on mobile devices
+    const faqsToShow = window.innerWidth < 768 ? faqs.slice(0, 4) : faqs;
+
+    faqsToShow.forEach((faq, idx) => {
         const item = document.createElement('div');
         item.className = 'faq-item';
         item.innerHTML = `

@@ -7066,3 +7066,47 @@ h1, h2, h3, h4, h5, h6 {
         display: flex !important;
     }
 }
+
+/* ==========================================================================
+   Professional Mobile Content Pruning & Responsive Layout Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Transform industry tabs into a ribbon row scrollable horizontally */
+    .industry-tabs {
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        padding-bottom: 12px !important;
+        gap: 10px !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar for cleanliness */
+    }
+    .industry-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .tab-btn {
+        flex-shrink: 0 !important;
+        padding: 8px 14px !important;
+    }
+    
+    /* Hide non-essential large graphics to reduce page length */
+    .cert-image-hud-container {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Hide KPI stats below hero to jump straight to action items */
+    .hero-split-kpis {
+        display: none !important;
+    }
+    
+    /* Shorten why-choose nodes by hiding paragraphs, keeping titles & badges */
+    .pipeline-node p {
+        display: none !important;
+    }
+    .pipeline-node {
+        padding: 18px 15px !important;
+        gap: 8px !important;
+    }
+}
