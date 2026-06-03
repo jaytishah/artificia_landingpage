@@ -1734,39 +1734,6 @@
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="cDesignation">Designation *</label>
-                                <input type="text" id="cDesignation" required placeholder="e.g. Director of Operations">
-                            </div>
-                            <div class="form-group">
-                                <label for="cIndustry">Industry *</label>
-                                <select id="cIndustry" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer;">
-                                    <option value="" disabled selected>Select Industry</option>
-                                    <option value="Manufacturing">Manufacturing</option>
-                                    <option value="Healthcare">Healthcare & Hospitals</option>
-                                    <option value="Tech">Technology / IT</option>
-                                    <option value="Finance">Finance / Banking</option>
-                                    <option value="Retail">Retail & E-commerce</option>
-                                    <option value="Education">Education & Academics</option>
-                                    <option value="Logistics">Logistics & Exports</option>
-                                    <option value="Other">Other Industry</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cTeamSize">Team Size *</label>
-                                <select id="cTeamSize" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer;">
-                                    <option value="" disabled selected>Select Team Size</option>
-                                    <option value="1-10">1-10 Employees</option>
-                                    <option value="10-25">10-25 Employees</option>
-                                    <option value="25-50">25-50 Employees</option>
-                                    <option value="50-100">50-100 Employees</option>
-                                    <option value="100-500">100-500 Employees</option>
-                                    <option value="500+">500+ Employees</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label for="cTrainCount">Number of Employees to Train *</label>
                                 <select id="cTrainCount" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer;">
                                     <option value="" disabled selected>Select Count</option>
@@ -1778,9 +1745,6 @@
                                     <option value="100+">100+ Employees</option>
                                 </select>
                             </div>
-                        </div>
-
-                        <div class="form-row">
                             <div class="form-group">
                                 <label for="cAdoption">Current AI Adoption Level *</label>
                                 <select id="cAdoption" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer;">
@@ -1789,16 +1753,6 @@
                                     <option value="Exploration">Exploration (using ChatGPT/Claude)</option>
                                     <option value="Partial">Partial Integration (some tools/APIs)</option>
                                     <option value="High">High Integration (custom automations/models)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="cTimeline">Timeline *</label>
-                                <select id="cTimeline" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer;">
-                                    <option value="" disabled selected>Select Timeline</option>
-                                    <option value="Immediate">Immediate (Less than 1 month)</option>
-                                    <option value="1-3 Months">1-3 Months</option>
-                                    <option value="3-6 Months">3-6 Months</option>
-                                    <option value="6+ Months">6+ Months</option>
                                 </select>
                             </div>
                         </div>
@@ -1815,7 +1769,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label style="margin-bottom: 8px; font-weight: 700; color: rgba(255,255,255,0.95);">Primary Objective *</label>
+                            <label style="margin-bottom: 8px; font-weight: 700; color: rgba(255,255,255,0.95);">Primary Objective (Optional)</label>
                             <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
                                 <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="Workflow Automation" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Automate Repetitive Workflows</label>
                                 <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="cObjective" value="Workforce Upskilling" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Upskill Team Members on AI</label>
@@ -1826,8 +1780,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="cChallenge">Biggest Challenge *</label>
-                            <textarea id="cChallenge" rows="3" required placeholder="Describe your team's biggest operational bottlenecks or challenges..."></textarea>
+                            <label for="cChallenge">Biggest Challenge (Optional)</label>
+                            <textarea id="cChallenge" rows="3" placeholder="Describe your team's biggest operational bottlenecks or challenges..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary w-100 mt-3">
@@ -1986,39 +1940,6 @@
 
                 <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                        <label for="mbDesignation" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Designation *</label>
-                        <input type="text" id="mbDesignation" required placeholder="e.g. Director of Operations" class="quiz-input" style="padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; width: 100%;">
-                    </div>
-                    <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                        <label for="mbIndustry" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Industry *</label>
-                        <select id="mbIndustry" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                            <option value="" disabled selected>Select Industry</option>
-                            <option value="Manufacturing">Manufacturing</option>
-                            <option value="Healthcare">Healthcare & Hospitals</option>
-                            <option value="Tech">Technology / IT</option>
-                            <option value="Finance">Finance / Banking</option>
-                            <option value="Retail">Retail & E-commerce</option>
-                            <option value="Education">Education & Academics</option>
-                            <option value="Logistics">Logistics & Exports</option>
-                            <option value="Other">Other Industry</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                        <label for="mbTeamSize" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Total Team Size *</label>
-                        <select id="mbTeamSize" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                            <option value="" disabled selected>Select Team Size</option>
-                            <option value="1-10">1-10 Employees</option>
-                            <option value="10-25">10-25 Employees</option>
-                            <option value="25-50">25-50 Employees</option>
-                            <option value="50-100">50-100 Employees</option>
-                            <option value="100-500">100-500 Employees</option>
-                            <option value="500+">500+ Employees</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
                         <label for="mbTrainCount" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Employees to Train *</label>
                         <select id="mbTrainCount" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
                             <option value="" disabled selected>Select Count</option>
@@ -2030,9 +1951,6 @@
                             <option value="100+">100+ Employees</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
                         <label for="mbAdoption" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Current AI Adoption Level *</label>
                         <select id="mbAdoption" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
@@ -2041,16 +1959,6 @@
                             <option value="Exploration">Exploration (using ChatGPT/Claude)</option>
                             <option value="Partial">Partial Integration (some tools/APIs)</option>
                             <option value="High">High Integration (custom automations/models)</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                        <label for="mbTimeline" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Timeline *</label>
-                        <select id="mbTimeline" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                            <option value="" disabled selected>Select Timeline</option>
-                            <option value="Immediate">Immediate (Less than 1 month)</option>
-                            <option value="1-3 Months">1-3 Months</option>
-                            <option value="3-6 Months">3-6 Months</option>
-                            <option value="6+ Months">6+ Months</option>
                         </select>
                     </div>
                 </div>
@@ -2067,7 +1975,7 @@
                 </div>
 
                 <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                    <label style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block; margin-bottom: 5px;">Primary Objective *</label>
+                    <label style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block; margin-bottom: 5px;">Primary Objective (Optional)</label>
                     <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
                         <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="Workflow Automation" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Automate Repetitive Workflows</label>
                         <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="mbObjective" value="Workforce Upskilling" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Upskill Team Members on AI</label>
@@ -2078,8 +1986,8 @@
                 </div>
 
                 <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                    <label for="mbChallenge" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Biggest Challenge *</label>
-                    <textarea id="mbChallenge" rows="3" required placeholder="Describe your team's biggest operational bottlenecks or challenges..." class="quiz-input" style="padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; resize: none; width: 100%; font-family: inherit;"></textarea>
+                    <label for="mbChallenge" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Biggest Challenge (Optional)</label>
+                    <textarea id="mbChallenge" rows="3" placeholder="Describe your team's biggest operational bottlenecks or challenges..." class="quiz-input" style="padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; resize: none; width: 100%; font-family: inherit;"></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary w-100 mt-2" style="padding: 15px; font-weight: 800; text-transform: uppercase;">
@@ -2242,39 +2150,6 @@
 
                         <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                                <label for="eDesignation" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Designation *</label>
-                                <input type="text" id="eDesignation" required placeholder="e.g. Director of Operations" class="quiz-input" style="padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; width: 100%;">
-                            </div>
-                            <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                                <label for="eIndustry" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Industry *</label>
-                                <select id="eIndustry" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                                    <option value="" disabled selected>Select Industry</option>
-                                    <option value="Manufacturing">Manufacturing</option>
-                                    <option value="Healthcare">Healthcare & Hospitals</option>
-                                    <option value="Tech">Technology / IT</option>
-                                    <option value="Finance">Finance / Banking</option>
-                                    <option value="Retail">Retail & E-commerce</option>
-                                    <option value="Education">Education & Academics</option>
-                                    <option value="Logistics">Logistics & Exports</option>
-                                    <option value="Other">Other Industry</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                                <label for="eTeamSize" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Total Team Size *</label>
-                                <select id="eTeamSize" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                                    <option value="" disabled selected>Select Team Size</option>
-                                    <option value="1-10">1-10 Employees</option>
-                                    <option value="10-25">10-25 Employees</option>
-                                    <option value="25-50">25-50 Employees</option>
-                                    <option value="50-100">50-100 Employees</option>
-                                    <option value="100-500">100-500 Employees</option>
-                                    <option value="500+">500+ Employees</option>
-                                </select>
-                            </div>
-                            <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
                                 <label for="eTrainCount" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Employees to Train *</label>
                                 <select id="eTrainCount" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
                                     <option value="" disabled selected>Select Count</option>
@@ -2286,9 +2161,6 @@
                                     <option value="100+">100+ Employees</option>
                                 </select>
                             </div>
-                        </div>
-
-                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
                                 <label for="eAdoption" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Current AI Adoption Level *</label>
                                 <select id="eAdoption" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
@@ -2297,16 +2169,6 @@
                                     <option value="Exploration">Exploration (using ChatGPT/Claude)</option>
                                     <option value="Partial">Partial Integration (some tools/APIs)</option>
                                     <option value="High">High Integration (custom automations/models)</option>
-                                </select>
-                            </div>
-                            <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                                <label for="eTimeline" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Timeline *</label>
-                                <select id="eTimeline" required class="quiz-input" style="padding: 12px; background: #2A2E2E; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; cursor: pointer; width: 100%;">
-                                    <option value="" disabled selected>Select Timeline</option>
-                                    <option value="Immediate">Immediate (Less than 1 month)</option>
-                                    <option value="1-3 Months">1-3 Months</option>
-                                    <option value="3-6 Months">3-6 Months</option>
-                                    <option value="6+ Months">6+ Months</option>
                                 </select>
                             </div>
                         </div>
@@ -2323,7 +2185,7 @@
                         </div>
 
                         <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                            <label style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block; margin-bottom: 5px;">Primary Objective *</label>
+                            <label style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block; margin-bottom: 5px;">Primary Objective (Optional)</label>
                             <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
                                 <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="Workflow Automation" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Automate Repetitive Workflows</label>
                                 <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.9); cursor: pointer;"><input type="checkbox" name="eObjective" value="Workforce Upskilling" style="width: 18px; height: 18px; accent-color: var(--lime); cursor: pointer;"> Upskill Team Members on AI</label>
@@ -2334,8 +2196,8 @@
                         </div>
 
                         <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
-                            <label for="eChallenge" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Biggest Challenge *</label>
-                            <textarea id="eChallenge" rows="3" required placeholder="Describe your team's biggest operational bottlenecks or challenges..." class="quiz-input" style="padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; resize: none; width: 100%; font-family: inherit;"></textarea>
+                            <label for="eChallenge" style="font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.95); text-align: left; display: block;">Biggest Challenge (Optional)</label>
+                            <textarea id="eChallenge" rows="3" placeholder="Describe your team's biggest operational bottlenecks or challenges..." class="quiz-input" style="padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; resize: none; width: 100%; font-family: inherit;"></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary w-100 mt-2">Submit Consultation Request <i class="fas fa-arrow-right"></i></button>
