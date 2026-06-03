@@ -5571,7 +5571,12 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .consultation-section {
     padding: 100px 0;
-    background: linear-gradient(to bottom, #000000, #04000a);
+    background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(4, 0, 10, 0.85)),
+        url('org_different_bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .consult-grid {
