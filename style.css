@@ -8298,10 +8298,9 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .background-robot-entity {
     position: absolute;
-    top: 45%;
+    bottom: -100px; /* adjusted so the torso bottom tip touches the end of the section */
     left: -2%;
     right: auto;
-    transform: translateY(-50%);
     width: 550px;
     height: 730px;
     pointer-events: none;
@@ -8311,9 +8310,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes floatRobot3D {
-    0% { transform: translateY(-50%) translateX(0) rotate(-1deg); }
-    50% { transform: translateY(-52%) translateX(8px) rotate(1deg); }
-    100% { transform: translateY(-48%) translateX(-4px) rotate(-0.5deg); }
+    0% { transform: translateY(0) translateX(0) rotate(-1deg); }
+    50% { transform: translateY(-10px) translateX(8px) rotate(1deg); }
+    100% { transform: translateY(5px) translateX(-4px) rotate(-0.5deg); }
 }
 
 .bg-robot-svg {
@@ -8417,6 +8416,8 @@ h1, h2, h3, h4, h5, h6 {
         height: 666px;
         left: -4%;
         right: auto;
+        top: auto;
+        bottom: -92px;
         opacity: 0.22;
     }
 }
@@ -8427,6 +8428,8 @@ h1, h2, h3, h4, h5, h6 {
         height: 586px;
         left: -6%;
         right: auto;
+        top: auto;
+        bottom: -80px;
         opacity: 0.18;
     }
 }
@@ -8437,6 +8440,8 @@ h1, h2, h3, h4, h5, h6 {
         height: 506px;
         left: -8%;
         right: auto;
+        top: auto;
+        bottom: -70px;
         opacity: 0.14;
     }
 }
@@ -8444,6 +8449,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 991px) {
     .background-robot-entity {
         top: 28%;
+        bottom: auto;
         right: auto;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -8462,6 +8468,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 576px) {
     .background-robot-entity {
         top: 25%;
+        bottom: auto;
         right: auto;
         left: 50%;
         transform: translate(-50%, -50%);
