@@ -572,7 +572,7 @@ h1, h2, h3, h4, h5, h6 {
    Hero Section & Interactive Elements
    ========================================================================== */
 .hero-section {
-    padding: 10px 0 60px;
+    padding: 10px 0 20px;
     position: relative;
     overflow: hidden;
     background-color: #000000;
@@ -866,7 +866,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 52% 48%;
     gap: 60px;
     align-items: center;
-    padding: 80px 5% 120px;
+    padding: 80px 5% 40px;
     width: 100%;
     max-width: 1700px;
     margin: 0 auto;
@@ -6745,7 +6745,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 @media (max-width: 1024px) {
     .hero-section {
-        padding: 70px 0 50px;
+        padding: 70px 0 20px;
         background-image: none;
     }
 
@@ -7695,7 +7695,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Padding adjustments for extreme mobile screens */
     .hero-section {
         padding-top: 100px !important;
-        padding-bottom: 50px !important;
+        padding-bottom: 20px !important;
     }
 }
 
