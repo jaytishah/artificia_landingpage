@@ -7626,3 +7626,98 @@ h1, h2, h3, h4, h5, h6 {
         inset: -10px;
     }
 }
+
+/* AI & ML High-Tech Floating Node Pills */
+.ml-node-pill {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 15, 15, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.95);
+    z-index: 10;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(174, 213, 52, 0.05);
+    animation: floatNodePill 5s ease-in-out infinite alternate;
+}
+
+/* Animations with staggered delays */
+.pill-epochs { animation-delay: 0s; }
+.pill-accuracy { animation-delay: 1.2s; }
+.pill-nlp { animation-delay: 2.4s; }
+.pill-agent { animation-delay: 3.6s; }
+
+@keyframes floatNodePill {
+    0% {
+        transform: translateY(0) scale(1);
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+    100% {
+        transform: translateY(-8px) scale(1.02);
+        border-color: rgba(174, 213, 52, 0.35);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(174, 213, 52, 0.15);
+    }
+}
+
+.pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.glow-green {
+    background-color: var(--lime);
+    box-shadow: 0 0 8px var(--lime);
+}
+
+.glow-cyan {
+    background-color: #00f0ff;
+    box-shadow: 0 0 8px #00f0ff;
+}
+
+.glow-purple {
+    background-color: #bf5eff;
+    box-shadow: 0 0 8px #bf5eff;
+}
+
+.glow-amber {
+    background-color: #ff9500;
+    box-shadow: 0 0 8px #ff9500;
+}
+
+.pill-label {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pill-val {
+    font-weight: 800;
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Make sure float animations look stunning and interact well with media queries */
+@media (max-width: 1024px) {
+    .ml-node-pill {
+        transform: scale(0.9);
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ml-node-pill {
+        display: none;
+    }
+}
