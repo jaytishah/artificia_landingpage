@@ -179,6 +179,54 @@
             <div class="binary-particle bin-1">0</div>
             <div class="binary-particle bin-2">1</div>
             <div class="binary-particle bin-3">{}</div>
+
+            <!-- Solid 3D Neon Spiral Spring (Long Ring Helix) -->
+            <div class="hero-neon-spring-container">
+                <svg class="hero-neon-spring-svg" viewBox="0 0 200 530" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Gradients -->
+                        <linearGradient id="springNeonFront" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" />
+                            <stop offset="100%" stop-color="#aed534" />
+                        </linearGradient>
+                        <linearGradient id="springNeonBack" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" stop-color="#00869a" />
+                            <stop offset="100%" stop-color="#6b8618" />
+                        </linearGradient>
+                        
+                        <!-- Glow Filter -->
+                        <filter id="neonGlowSpring" x="-80%" y="-80%" width="260%" height="260%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1" />
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur2" />
+                            <feMerge>
+                                <feMergeNode in="blur2" />
+                                <feMergeNode in="blur1" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- 1. BACK SEGMENTS (drawn first, behind) -->
+                    <g class="spring-back-group">
+                        <path d="M 160,70 C 160,95 40,115 40,115" stroke="url(#springNeonBack)" stroke-width="26" stroke-linecap="round" fill="none" />
+                        <path d="M 160,150 C 160,175 40,195 40,195" stroke="url(#springNeonBack)" stroke-width="26" stroke-linecap="round" fill="none" />
+                        <path d="M 160,230 C 160,255 40,275 40,275" stroke="url(#springNeonBack)" stroke-width="26" stroke-linecap="round" fill="none" />
+                        <path d="M 160,310 C 160,335 40,355 40,355" stroke="url(#springNeonBack)" stroke-width="26" stroke-linecap="round" fill="none" />
+                        <path d="M 160,390 C 160,415 40,435 40,435" stroke="url(#springNeonBack)" stroke-width="26" stroke-linecap="round" fill="none" />
+                    </g>
+
+                    <!-- 2. FRONT SEGMENTS (drawn second, in front with glow) -->
+                    <g class="spring-front-group">
+                        <path d="M 100,40 C 130,40 160,50 160,70" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                        <path d="M 40,115 C 40,135 160,130 160,150" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                        <path d="M 40,195 C 40,215 160,210 160,230" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                        <path d="M 40,275 C 40,295 160,290 160,310" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                        <path d="M 40,355 C 40,375 160,370 160,390" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                        <path d="M 40,435 C 40,455 160,450 160,470" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                        <path d="M 160,470 C 160,490 130,490 100,490" stroke="url(#springNeonFront)" stroke-width="32" stroke-linecap="round" fill="none" filter="url(#neonGlowSpring)" />
+                    </g>
+                </svg>
+            </div>
         </div>
 
         <!-- Topographical wave background overlay -->
