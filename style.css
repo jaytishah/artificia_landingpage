@@ -8245,7 +8245,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Background Robot Entity — Side-Profile Humanoid
+   Background Robot Entity — Cute 3D Neon Robot
    ========================================================================== */
 .background-robot-entity {
     position: absolute;
@@ -8253,30 +8253,18 @@ h1, h2, h3, h4, h5, h6 {
     left: -2%;
     right: auto;
     transform: translateY(-50%);
-    width: 600px;
-    height: 800px;
+    width: 550px;
+    height: 730px;
     pointer-events: none;
     z-index: 2;
     opacity: 0.32;
-    animation: floatRobot 12s ease-in-out infinite alternate;
+    animation: floatRobot3D 7s ease-in-out infinite alternate;
 }
 
-/* Hide other body parts to show the robot only up to its neck */
-.robot-torso,
-.robot-arm-left,
-.robot-arm-right,
-.robot-leg-left,
-.robot-leg-right,
-.robot-waist,
-.sparkle-field,
-.ambient-particles {
-    display: none !important;
-}
-
-@keyframes floatRobot {
-    0% { transform: translateY(-49%) rotate(-0.3deg); }
-    50% { transform: translateY(-51%) rotate(0deg); }
-    100% { transform: translateY(-49.5%) rotate(0.3deg); }
+@keyframes floatRobot3D {
+    0% { transform: translateY(-50%) translateX(0) rotate(-1deg); }
+    50% { transform: translateY(-52%) translateX(8px) rotate(1deg); }
+    100% { transform: translateY(-48%) translateX(-4px) rotate(-0.5deg); }
 }
 
 .bg-robot-svg {
@@ -8285,219 +8273,93 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-/* === DOME SHELL SHIMMER === */
-.dome-shell {
-    animation: domeShimmer 6s ease-in-out infinite alternate;
+/* === CUTE ROBOT MICRO-ANIMATIONS === */
+
+/* Eyes Pulse */
+.eye-glow {
+    animation: eyeNeonPulse 3s ease-in-out infinite alternate;
 }
-@keyframes domeShimmer {
-    0% { stroke: rgba(200,220,240,0.15); fill: rgba(180,210,240,0.02); }
-    100% { stroke: rgba(200,220,240,0.35); fill: rgba(180,210,240,0.06); }
+@keyframes eyeNeonPulse {
+    0% { fill: rgba(255, 255, 255, 0.9); opacity: 0.85; filter: drop-shadow(0 0 2px rgba(0, 240, 255, 0.5)); }
+    100% { fill: rgba(255, 255, 255, 1); opacity: 1; filter: drop-shadow(0 0 12px rgba(0, 240, 255, 1)); }
 }
 
-/* === BRAIN MECHANISM RINGS (Spinning concentric rings like reference) === */
-.brain-ring-1 {
-    animation: brainSpin1 18s linear infinite;
-    transform-origin: 390px 185px;
+/* Antenna Bulb Glow Pulse */
+.antenna-bulb {
+    animation: antennaBulbPulse 2s ease-in-out infinite alternate;
 }
-.brain-ring-2 {
-    animation: brainSpin2 12s linear infinite reverse;
-    transform-origin: 390px 185px;
-}
-.brain-ring-3 {
-    animation: brainSpin3 8s linear infinite;
-    transform-origin: 390px 185px;
-}
-.brain-ring-4 {
-    animation: brainSpin4 6s linear infinite reverse;
-    transform-origin: 390px 185px;
+@keyframes antennaBulbPulse {
+    0% { fill: rgba(255, 255, 255, 0.9); filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.6)); }
+    100% { fill: rgba(255, 255, 255, 1); filter: drop-shadow(0 0 15px rgba(0, 240, 255, 1)); }
 }
 
-@keyframes brainSpin1 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes brainSpin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes brainSpin3 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes brainSpin4 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-/* === BRAIN CORE PULSE === */
-.brain-core {
-    animation: brainCorePulse 2.5s ease-in-out infinite;
+/* Chest Outer Ring Spin */
+.chest-ring-out {
+    animation: spinRing 12s linear infinite;
+    transform-origin: 300px 525px;
 }
-@keyframes brainCorePulse {
-    0%, 100% { opacity: 0.4; r: 4; }
-    50% { opacity: 1; r: 7; filter: drop-shadow(0 0 12px #aed534); }
+@keyframes spinRing {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* === BRAIN AMBIENT GLOW === */
-.brain-ambient {
-    animation: brainAmbientBreath 4s ease-in-out infinite;
+/* Chest Inner Ring Reverse Spin */
+.chest-ring-in {
+    animation: spinRingReverse 8s linear infinite;
+    transform-origin: 300px 525px;
 }
-@keyframes brainAmbientBreath {
-    0%, 100% { opacity: 0.3; transform: scale(0.95); }
-    50% { opacity: 0.8; transform: scale(1.05); }
-}
-
-/* === CIRCUIT NODES (Inside brain) === */
-.circuit-node {
-    animation: circuitNodePulse 2.5s ease-in-out infinite alternate;
-}
-.cn-1 { animation-delay: 0s; }
-.cn-2 { animation-delay: 0.4s; }
-.cn-3 { animation-delay: 0.8s; }
-.cn-4 { animation-delay: 1.2s; }
-.cn-5 { animation-delay: 1.6s; }
-.cn-6 { animation-delay: 2.0s; }
-
-@keyframes circuitNodePulse {
-    0% { opacity: 0.2; transform: scale(0.6); }
-    100% { opacity: 1; transform: scale(1.4); filter: drop-shadow(0 0 6px currentColor); }
+@keyframes spinRingReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
 }
 
-/* === ACCENT RING (Glowing ring around head, like orange ring in reference) === */
-.accent-ring {
-    animation: accentRingSpin 15s linear infinite;
-    transform-origin: 390px 210px;
+/* Chest Core Breathing Glow */
+.chest-center-core {
+    animation: coreGlowPulse 2.5s ease-in-out infinite alternate;
 }
-@keyframes accentRingSpin {
-    from { transform: rotate(0deg); stroke-opacity: 0.5; }
-    to { transform: rotate(360deg); stroke-opacity: 1; }
-}
-
-/* === ACCENT DOTS (Like the orange glowing dots in the reference) === */
-.accent-dot {
-    animation: accentDotPulse 2s ease-in-out infinite;
-}
-.ad-1 { animation-delay: 0s; }
-.ad-2 { animation-delay: 0.5s; }
-.ad-3 { animation-delay: 1s; }
-
-@keyframes accentDotPulse {
-    0%, 100% { opacity: 0.3; transform: scale(0.7); }
-    50% { opacity: 1; transform: scale(1.3); filter: drop-shadow(0 0 10px #aed534); }
+@keyframes coreGlowPulse {
+    0% { opacity: 0.7; fill: #aed534; filter: drop-shadow(0 0 4px #aed534); }
+    100% { opacity: 1; fill: #ffffff; filter: drop-shadow(0 0 14px #aed534); }
 }
 
-/* === EYE VISOR === */
-.eye-visor {
-    animation: visorGlow 4s ease-in-out infinite alternate;
+/* Smile Breathing Glow */
+.smile-glow {
+    animation: smilePulse 4s ease-in-out infinite alternate;
 }
-@keyframes visorGlow {
-    0% { fill: rgba(0,240,255,0.04); stroke-opacity: 0.5; }
-    100% { fill: rgba(0,240,255,0.12); stroke-opacity: 1; }
-}
-
-/* === ROBOT EYES === */
-.robot-eye-left, .robot-eye-right {
-    animation: robotEyePulse 3s ease-in-out infinite alternate;
-}
-.robot-eye-right { animation-delay: 0.6s; }
-
-@keyframes robotEyePulse {
-    0% { opacity: 0.3; fill: rgba(0,240,255,0.1); }
-    100% { opacity: 1; fill: rgba(0,240,255,0.35); filter: drop-shadow(0 0 8px rgba(0,240,255,0.8)); }
+@keyframes smilePulse {
+    0% { opacity: 0.7; stroke-opacity: 0.8; }
+    100% { opacity: 1; stroke-opacity: 1; filter: drop-shadow(0 0 6px #aed534); }
 }
 
-/* === REACTOR CORE (Chest) === */
-.core-glow {
-    animation: coreBreath 3s ease-in-out infinite;
+/* Left Arm Floating Sway */
+.left-arm-limb {
+    animation: armFloatLeft 5s ease-in-out infinite alternate;
+    transform-origin: 215px 420px;
 }
-@keyframes coreBreath {
-    0%, 100% { opacity: 0.3; transform: scale(0.92); }
-    50% { opacity: 0.9; transform: scale(1.08); }
-}
-
-.core-ring-outer {
-    animation: coreRingSpin 10s linear infinite;
-    transform-origin: 390px 480px;
-}
-@keyframes coreRingSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-.core-ring-inner {
-    animation: coreRingReverse 7s linear infinite reverse;
-    transform-origin: 390px 480px;
-}
-@keyframes coreRingReverse { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-.core-center {
-    animation: coreCenterPulse 2s ease-in-out infinite;
-}
-@keyframes coreCenterPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; filter: drop-shadow(0 0 8px #00f0ff); }
+@keyframes armFloatLeft {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-4deg); }
 }
 
-/* === FINGERTIP GLOWS === */
-.fingertip {
-    animation: fingertipGlow 1.8s ease-in-out infinite alternate;
+/* Right Arm Floating Sway */
+.right-arm-limb {
+    animation: armFloatRight 5s ease-in-out infinite alternate;
+    transform-origin: 385px 420px;
 }
-.ft-1 { animation-delay: 0s; }
-.ft-2 { animation-delay: 0.3s; }
-.ft-3 { animation-delay: 0.6s; }
-.ft-4 { animation-delay: 0.9s; }
-
-@keyframes fingertipGlow {
-    0% { opacity: 0.3; transform: scale(0.5); }
-    100% { opacity: 1; transform: scale(1.5); filter: drop-shadow(0 0 6px currentColor); }
+@keyframes armFloatRight {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(4deg); }
 }
 
-/* === SPARKLE PARTICLES (Main attraction — emanating from hand) === */
-.sparkle {
-    animation: sparkleTwinkle 3s ease-in-out infinite;
+/* Ambient Floaters Animation */
+.robot-floaters {
+    animation: floatersMove 8s ease-in-out infinite alternate;
 }
-/* Stagger each sparkle with different timing */
-.sp-1  { animation-delay: 0.0s; animation-duration: 2.2s; }
-.sp-2  { animation-delay: 0.3s; animation-duration: 2.8s; }
-.sp-3  { animation-delay: 0.7s; animation-duration: 2.0s; }
-.sp-4  { animation-delay: 1.0s; animation-duration: 3.2s; }
-.sp-5  { animation-delay: 0.5s; animation-duration: 2.5s; }
-.sp-6  { animation-delay: 1.3s; animation-duration: 2.0s; }
-.sp-7  { animation-delay: 0.2s; animation-duration: 3.0s; }
-.sp-8  { animation-delay: 0.8s; animation-duration: 3.5s; }
-.sp-9  { animation-delay: 1.5s; animation-duration: 2.8s; }
-.sp-10 { animation-delay: 0.4s; animation-duration: 3.2s; }
-.sp-11 { animation-delay: 1.1s; animation-duration: 2.5s; }
-.sp-12 { animation-delay: 0.6s; animation-duration: 3.8s; }
-.sp-13 { animation-delay: 1.8s; animation-duration: 4.0s; }
-.sp-14 { animation-delay: 0.9s; animation-duration: 3.5s; }
-.sp-15 { animation-delay: 2.0s; animation-duration: 4.5s; }
-.sp-16 { animation-delay: 1.4s; animation-duration: 3.0s; }
-.sp-17 { animation-delay: 2.2s; animation-duration: 4.0s; }
-.sp-18 { animation-delay: 1.7s; animation-duration: 3.8s; }
-
-@keyframes sparkleTwinkle {
-    0% { opacity: 0; transform: scale(0.3) translateY(5px); }
-    30% { opacity: 1; transform: scale(1.2) translateY(-3px); }
-    60% { opacity: 0.7; transform: scale(0.8) translateY(-8px); }
-    100% { opacity: 0; transform: scale(0.2) translateY(-15px); }
+@keyframes floatersMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px) translateX(4px); }
 }
 
-/* === SPARKLE TRAILS === */
-.sparkle-trail {
-    stroke-dasharray: 4 6;
-    animation: trailFlow 2.5s linear infinite;
-}
-.st-1 { animation-delay: 0s; }
-.st-2 { animation-delay: 0.5s; }
-.st-3 { animation-delay: 1s; }
-
-@keyframes trailFlow {
-    from { stroke-dashoffset: 0; opacity: 0.08; }
-    to { stroke-dashoffset: -20; opacity: 0; }
-}
-
-/* === AMBIENT PARTICLES (Scattered around body) === */
-.amb-p {
-    animation: ambientFloat 5s ease-in-out infinite alternate;
-}
-.ap-1 { animation-delay: 0s; animation-duration: 6s; }
-.ap-2 { animation-delay: 0.8s; animation-duration: 5s; }
-.ap-3 { animation-delay: 1.5s; animation-duration: 7s; }
-.ap-4 { animation-delay: 0.3s; animation-duration: 5.5s; }
-.ap-5 { animation-delay: 1.0s; animation-duration: 6.5s; }
-.ap-6 { animation-delay: 2.0s; animation-duration: 5s; }
-
-@keyframes ambientFloat {
-    0% { opacity: 0.1; transform: translateY(0) scale(0.5); }
-    50% { opacity: 0.6; }
-    100% { opacity: 0.15; transform: translateY(-20px) scale(1.3); }
-}
 
 /* === RESPONSIVENESS === */
 @media (max-width: 1600px) {
@@ -8539,7 +8401,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 360px;
         height: 480px;
         opacity: 0.14;
-        animation: floatRobotMobile 12s ease-in-out infinite alternate;
+        animation: floatRobotMobile 7s ease-in-out infinite alternate;
     }
     
     @keyframes floatRobotMobile {
@@ -8557,6 +8419,6 @@ h1, h2, h3, h4, h5, h6 {
         width: 280px;
         height: 373px;
         opacity: 0.1;
-        animation: floatRobotMobile 12s ease-in-out infinite alternate;
+        animation: floatRobotMobile 7s ease-in-out infinite alternate;
     }
 }
