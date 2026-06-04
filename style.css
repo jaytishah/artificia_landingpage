@@ -3140,6 +3140,213 @@ h1, h2, h3, h4, h5, h6 {
     padding: 100px 0 80px;
     background: linear-gradient(to bottom, #000000, #04000a);
     overflow: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   Solid 3D Background Animations (Ref image style for Different Section)
+   ========================================================================== */
+.diff-solid-cube-container {
+    position: absolute;
+    top: 25%;
+    left: -3%;
+    width: 380px;
+    height: 380px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.42;
+    animation: floatSolidCube 14s ease-in-out infinite alternate;
+}
+
+.diff-solid-spheres-container {
+    position: absolute;
+    top: 20%;
+    right: -4%;
+    width: 420px;
+    height: 420px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.38;
+    animation: floatSolidSpheres 16s ease-in-out infinite alternate;
+}
+
+@keyframes floatSolidCube {
+    0% { transform: translateY(0) rotate(-2deg) scale(0.95); }
+    50% { transform: translateY(-25px) rotate(1deg) scale(1.02); }
+    100% { transform: translateY(-5px) rotate(-1deg) scale(0.98); }
+}
+
+@keyframes floatSolidSpheres {
+    0% { transform: translateY(0) rotate(1deg) scale(1.02); }
+    50% { transform: translateY(-30px) rotate(-2deg) scale(0.96); }
+    100% { transform: translateY(-10px) rotate(2deg) scale(1); }
+}
+
+.diff-solid-cube-svg, .diff-solid-spheres-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.isometric-cube {
+    animation: cubePulse 6s ease-in-out infinite alternate;
+    transform-origin: 200px 200px;
+}
+
+@keyframes cubePulse {
+    0% { transform: scale(0.97) translate(0, 0); opacity: 0.85; }
+    100% { transform: scale(1.03) translate(3px, -4px); opacity: 1; }
+}
+
+/* Stagger animations for the 3D cube block */
+.cube-0-0-0, .cube-1-0-0, .cube-0-1-0 { animation-delay: 0.2s; }
+.cube-1-1-0, .cube-2-0-0, .cube-0-2-0, .cube-1-0-1 { animation-delay: 0.6s; }
+.cube-2-1-0, .cube-1-2-0, .cube-1-1-1, .cube-2-0-1, .cube-0-2-1 { animation-delay: 1.0s; }
+.cube-2-2-0, .cube-2-1-1, .cube-1-2-1, .cube-0-0-2 { animation-delay: 1.4s; }
+.cube-2-2-1, .cube-1-0-2, .cube-0-1-2 { animation-delay: 1.8s; }
+.cube-1-1-2, .cube-2-0-2, .cube-0-2-2 { animation-delay: 2.2s; }
+.cube-2-1-2, .cube-1-2-2 { animation-delay: 2.6s; }
+.cube-2-2-2 { animation-delay: 3.0s; }
+
+/* Micro float inside spheres */
+.floating-solids {
+    animation: solidPartsFloat 8s ease-in-out infinite alternate;
+}
+.sphere-smooth { animation-duration: 9s; animation-delay: 0s; transform-origin: 120px 120px; }
+.sphere-ribbed { animation-duration: 11s; animation-delay: -3s; transform-origin: 220px 280px; }
+.sphere-wireframe { animation-duration: 10s; animation-delay: -5s; transform-origin: 310px 110px; }
+
+@keyframes solidPartsFloat {
+    0% { transform: translateY(0) scale(0.97); }
+    100% { transform: translateY(-12px) scale(1.03); }
+}
+
+/* Responsive Overrides for solid different-section animations */
+@media (max-width: 1600px) {
+    .diff-solid-cube-container { width: 300px; height: 300px; left: -5%; }
+    .diff-solid-spheres-container { width: 340px; height: 340px; right: -6%; }
+}
+@media (max-width: 1200px) {
+    .diff-solid-cube-container { width: 240px; height: 240px; left: -7%; opacity: 0.28; }
+    .diff-solid-spheres-container { width: 280px; height: 280px; right: -8%; opacity: 0.25; }
+}
+@media (max-width: 991px) {
+    .diff-solid-cube-container { left: -10%; top: 15%; width: 200px; height: 200px; opacity: 0.15; }
+    .diff-solid-spheres-container { right: -10%; bottom: 15%; top: auto; width: 220px; height: 220px; opacity: 0.15; }
+}
+@media (max-width: 576px) {
+    .diff-solid-cube-container { width: 140px; height: 140px; left: -12%; opacity: 0.1; }
+    .diff-solid-spheres-container { width: 140px; height: 140px; right: -12%; opacity: 0.1; }
+}
+
+/* ==========================================================================
+   Framework Section Background Animations (Rocket & Tech Icons)
+   ========================================================================== */
+.framework-bg-animations {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Moving Rocket Animation */
+.fw-rocket-container {
+    position: absolute;
+    bottom: -15%;
+    left: -15%;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    animation: rocketLaunch 22s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.bg-rocket-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@keyframes rocketLaunch {
+    0% {
+        transform: translate(0, 0) scale(0.55) rotate(0deg);
+        opacity: 0;
+    }
+    4% {
+        opacity: 0.62;
+    }
+    90% {
+        opacity: 0.62;
+    }
+    100% {
+        transform: translate(125vw, -100vh) scale(1.25) rotate(6deg);
+        opacity: 0;
+    }
+}
+
+/* Floating tech/business icons */
+.fw-bg-icon {
+    position: absolute;
+    color: rgba(174, 213, 52, 0.16);
+    font-size: 2.2rem;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fwIconFloat 10s ease-in-out infinite alternate;
+}
+
+/* Specific offsets & theme colors */
+.fw-icon-1 { top: 12%; left: 8%; animation-delay: 0s; color: rgba(174, 213, 52, 0.18); }
+.fw-icon-2 { top: 46%; left: 16%; animation-delay: -2s; color: rgba(0, 240, 255, 0.15); }
+.fw-icon-3 { top: 76%; left: 10%; animation-delay: -4s; color: rgba(174, 213, 52, 0.14); }
+.fw-icon-4 { top: 15%; right: 12%; animation-delay: -6s; color: rgba(0, 240, 255, 0.16); }
+.fw-icon-5 { top: 52%; right: 18%; animation-delay: -8s; color: rgba(174, 213, 52, 0.15); }
+.fw-icon-6 { top: 82%; right: 10%; animation-delay: -10s; color: rgba(191, 94, 255, 0.13); }
+
+@keyframes fwIconFloat {
+    0% { transform: translateY(0) rotate(0deg) scale(0.95); opacity: 0.7; }
+    100% { transform: translateY(-16px) rotate(10deg) scale(1.05); opacity: 1; }
+}
+
+/* Responsive Overrides for framework background animations */
+@media (max-width: 1400px) {
+    .fw-rocket-container { width: 220px; height: 220px; }
+    .fw-bg-icon { font-size: 2rem; }
+}
+@media (max-width: 1200px) {
+    .fw-rocket-container { width: 190px; height: 190px; }
+    .fw-bg-icon { font-size: 1.8rem; }
+}
+@media (max-width: 991px) {
+    .fw-rocket-container {
+        width: 160px;
+        height: 160px;
+        animation-duration: 18s;
+    }
+    .fw-bg-icon {
+        font-size: 1.6rem;
+        opacity: 0.1;
+    }
+    .fw-icon-1 { left: 4%; }
+    .fw-icon-2 { left: 8%; }
+    .fw-icon-3 { left: 5%; }
+    .fw-icon-4 { right: 4%; }
+    .fw-icon-5 { right: 8%; }
+    .fw-icon-6 { right: 5%; }
+}
+@media (max-width: 576px) {
+    .fw-rocket-container {
+        width: 120px;
+        height: 120px;
+    }
+    .fw-bg-icon {
+        font-size: 1.4rem;
+        opacity: 0.08;
+    }
 }
 
 /* Curvy Winding Roadmap Styles — corrected positioning math */
