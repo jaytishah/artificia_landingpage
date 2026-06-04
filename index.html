@@ -236,9 +236,9 @@
         <div class="background-robot-entity">
             <svg class="bg-robot-svg" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <!-- Neon filters -->
-                    <filter id="neonCyanGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="8" result="blur1"/>
+                    <!-- Intense Neon Green Glow Filter -->
+                    <filter id="neonGreen3DGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="10" result="blur1"/>
                         <feGaussianBlur stdDeviation="3" result="blur2"/>
                         <feMerge>
                             <feMergeNode in="blur1"/>
@@ -246,125 +246,144 @@
                             <feMergeNode in="SourceGraphic"/>
                         </feMerge>
                     </filter>
-                    <filter id="neonLimeGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="6" result="blur1"/>
-                        <feGaussianBlur stdDeviation="2" result="blur2"/>
-                        <feMerge>
-                            <feMergeNode in="blur1"/>
-                            <feMergeNode in="blur2"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-
-                    <!-- Shading gradients for 3D/Volumetric look -->
-                    <radialGradient id="volumetricHead" cx="35%" cy="30%" r="60%">
-                        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)"/>
-                        <stop offset="45%" stop-color="rgba(0, 240, 255, 0.12)"/>
-                        <stop offset="100%" stop-color="rgba(10, 25, 30, 0.95)"/>
+                    
+                    <!-- 3D Volumetric Spherical Gradients for Lime Green Theme -->
+                    <radialGradient id="volumetricHead3D" cx="35%" cy="30%" r="65%">
+                        <stop offset="0%" stop-color="#f4ffdb" />
+                        <stop offset="30%" stop-color="#bce43f" />
+                        <stop offset="70%" stop-color="#698516" />
+                        <stop offset="100%" stop-color="#1b2402" />
                     </radialGradient>
                     
-                    <radialGradient id="volumetricBody" cx="35%" cy="30%" r="65%">
-                        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.22)"/>
-                        <stop offset="50%" stop-color="rgba(0, 240, 255, 0.1)"/>
-                        <stop offset="100%" stop-color="rgba(10, 25, 30, 0.95)"/>
+                    <radialGradient id="volumetricBody3D" cx="35%" cy="30%" r="65%">
+                        <stop offset="0%" stop-color="#f4ffdb" />
+                        <stop offset="35%" stop-color="#bce43f" />
+                        <stop offset="75%" stop-color="#698516" />
+                        <stop offset="100%" stop-color="#1b2402" />
                     </radialGradient>
 
-                    <linearGradient id="neonCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8"/>
-                        <stop offset="100%" stop-color="rgba(0,240,255,0.15)"/>
+                    <radialGradient id="volumetricEar3D" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#f4ffdb" />
+                        <stop offset="50%" stop-color="#aed534" />
+                        <stop offset="100%" stop-color="#2d3c02" />
+                    </radialGradient>
+
+                    <!-- Specular Highlights -->
+                    <linearGradient id="specularGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.6)"/>
+                        <stop offset="50%" stop-color="rgba(174, 213, 52, 0.1)"/>
+                        <stop offset="100%" stop-color="rgba(0, 0, 0, 0)"/>
                     </linearGradient>
 
-                    <linearGradient id="neonLimeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#aed534" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="rgba(174,213,52,0.15)"/>
+                    <!-- Neon Green Stroke Gradients -->
+                    <linearGradient id="neonGreenStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#d9ff6d" />
+                        <stop offset="100%" stop-color="#73970b" />
                     </linearGradient>
 
-                    <linearGradient id="neonDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="rgba(15, 32, 39, 0.95)"/>
-                        <stop offset="100%" stop-color="rgba(32, 58, 67, 0.85)"/>
-                    </linearGradient>
+                    <!-- Eyes Visor Gradients -->
+                    <radialGradient id="eyesVisorGrad" cx="50%" cy="50%" r="70%">
+                        <stop offset="0%" stop-color="#151b03"/>
+                        <stop offset="100%" stop-color="#0a0d01"/>
+                    </radialGradient>
 
-                    <radialGradient id="eyeGlowCyan" cx="50%" cy="40%" r="50%">
+                    <radialGradient id="neonGreenEyeGlow" cx="50%" cy="40%" r="50%">
                         <stop offset="0%" stop-color="#ffffff"/>
-                        <stop offset="40%" stop-color="#00f0ff"/>
-                        <stop offset="100%" stop-color="rgba(0, 240, 255, 0.1)"/>
+                        <stop offset="50%" stop-color="#d4f962"/>
+                        <stop offset="100%" stop-color="rgba(174, 213, 52, 0.1)"/>
                     </radialGradient>
                 </defs>
 
-                <!-- Ambient Floater Shapes -->
+                <!-- Ambient Floater Shapes (Neon Green Only) -->
                 <g class="robot-floaters">
-                    <circle cx="80" cy="200" r="10" stroke="#aed534" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6"/>
-                    <path d="M 490,180 L 510,180 M 500,170 L 500,190" stroke="#00f0ff" stroke-width="2" opacity="0.5"/>
-                    <circle cx="520" cy="550" r="6" stroke="#00f0ff" stroke-width="1" opacity="0.4"/>
-                    <circle cx="100" cy="620" r="8" stroke="#aed534" stroke-width="1" opacity="0.5"/>
+                    <circle cx="80" cy="200" r="10" stroke="#aed534" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6" filter="url(#neonGreen3DGlow)"/>
+                    <path d="M 490,180 L 510,180 M 500,170 L 500,190" stroke="#aed534" stroke-width="2" opacity="0.5" filter="url(#neonGreen3DGlow)"/>
+                    <circle cx="520" cy="550" r="6" stroke="#aed534" stroke-width="1" opacity="0.4" filter="url(#neonGreen3DGlow)"/>
+                    <circle cx="100" cy="620" r="8" stroke="#aed534" stroke-width="1" opacity="0.5" filter="url(#neonGreen3DGlow)"/>
                 </g>
 
-                <!-- ROBOT MODEL: Cute 3D Neon Style -->
+                <!-- ROBOT MODEL: Cute 3D Neon Green Only -->
                 <g class="cute-robot-group">
                     
                     <!-- LEFT EAR JOINT & CAP -->
                     <g class="left-ear">
-                        <rect x="150" y="245" width="20" height="70" rx="10" fill="url(#neonDarkGrad)" stroke="#00f0ff" stroke-width="2.5" filter="url(#neonCyanGlow)"/>
-                        <rect x="130" y="235" width="20" height="90" rx="10" fill="url(#volumetricBody)" stroke="#00f0ff" stroke-width="2.5" filter="url(#neonCyanGlow)"/>
-                        <circle cx="140" cy="280" r="5" fill="#aed534" filter="url(#neonLimeGlow)"/>
+                        <rect x="150" y="245" width="20" height="70" rx="10" fill="url(#volumetricEar3D)" stroke="url(#neonGreenStroke)" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
+                        <rect x="130" y="235" width="20" height="90" rx="10" fill="url(#volumetricBody3D)" stroke="url(#neonGreenStroke)" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
+                        <circle cx="140" cy="280" r="5" fill="#ffffff" filter="url(#neonGreen3DGlow)"/>
                     </g>
 
                     <!-- RIGHT EAR JOINT & CAP -->
                     <g class="right-ear">
-                        <rect x="430" y="245" width="20" height="70" rx="10" fill="url(#neonDarkGrad)" stroke="#00f0ff" stroke-width="2.5" filter="url(#neonCyanGlow)"/>
-                        <rect x="450" y="235" width="20" height="90" rx="10" fill="url(#volumetricBody)" stroke="#00f0ff" stroke-width="2.5" filter="url(#neonCyanGlow)"/>
-                        <circle cx="460" cy="280" r="5" fill="#aed534" filter="url(#neonLimeGlow)"/>
+                        <rect x="430" y="245" width="20" height="70" rx="10" fill="url(#volumetricEar3D)" stroke="url(#neonGreenStroke)" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
+                        <rect x="450" y="235" width="20" height="90" rx="10" fill="url(#volumetricBody3D)" stroke="url(#neonGreenStroke)" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
+                        <circle cx="460" cy="280" r="5" fill="#ffffff" filter="url(#neonGreen3DGlow)"/>
                     </g>
 
                     <!-- ANTENNA -->
                     <g class="robot-antenna">
                         <!-- Dome Base -->
-                        <path d="M 280,186 C 280,178 320,178 320,186 Z" fill="url(#neonDarkGrad)" stroke="#00f0ff" stroke-width="2.5" filter="url(#neonCyanGlow)"/>
+                        <path d="M 280,186 C 280,178 320,178 320,186 Z" fill="url(#volumetricEar3D)" stroke="url(#neonGreenStroke)" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
                         <!-- Stem -->
-                        <line x1="300" y1="182" x2="300" y2="120" stroke="#00f0ff" stroke-width="4.5" stroke-linecap="round" filter="url(#neonCyanGlow)"/>
-                        <!-- Glowing Neon Lime Ball -->
-                        <circle cx="300" cy="108" r="14" fill="url(#eyeGlowCyan)" stroke="#00f0ff" stroke-width="3" filter="url(#neonCyanGlow)" class="antenna-bulb"/>
+                        <line x1="300" y1="182" x2="300" y2="120" stroke="url(#neonGreenStroke)" stroke-width="4.5" stroke-linecap="round" filter="url(#neonGreen3DGlow)"/>
+                        <!-- Glowing Neon Green Ball -->
+                        <circle cx="300" cy="108" r="14" fill="url(#neonGreenEyeGlow)" stroke="#aed534" stroke-width="3" filter="url(#neonGreen3DGlow)" class="antenna-bulb"/>
                     </g>
 
                     <!-- NECK -->
                     <g class="robot-neck">
-                        <rect x="270" y="368" width="60" height="42" rx="8" fill="url(#neonDarkGrad)" stroke="#00f0ff" stroke-width="2.5" filter="url(#neonCyanGlow)"/>
-                        <line x1="275" y1="380" x2="325" y2="380" stroke="#aed534" stroke-width="2" filter="url(#neonLimeGlow)"/>
-                        <line x1="275" y1="392" x2="325" y2="392" stroke="#00f0ff" stroke-width="2" filter="url(#neonCyanGlow)"/>
+                        <rect x="270" y="368" width="60" height="42" rx="8" fill="url(#volumetricEar3D)" stroke="url(#neonGreenStroke)" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
+                        <line x1="275" y1="380" x2="325" y2="380" stroke="#aed534" stroke-width="2" filter="url(#neonGreen3DGlow)"/>
+                        <line x1="275" y1="392" x2="325" y2="392" stroke="#aed534" stroke-width="2" filter="url(#neonGreen3DGlow)"/>
                     </g>
 
                     <!-- LEFT ARM -->
-                    <path d="M 215,420 C 175,435 160,500 170,565 C 175,595 195,595 200,565 C 200,520 202,470 215,420 Z" 
-                          fill="url(#volumetricBody)" stroke="#00f0ff" stroke-width="3" filter="url(#neonCyanGlow)" class="left-arm-limb"/>
+                    <g class="left-arm-group">
+                        <path d="M 215,420 C 175,435 160,500 170,565 C 175,595 195,595 200,565 C 200,520 202,470 215,420 Z" 
+                              fill="url(#volumetricBody3D)" stroke="url(#neonGreenStroke)" stroke-width="3" filter="url(#neonGreen3DGlow)" class="left-arm-limb"/>
+                        <!-- Arm 3D Highlight -->
+                        <path d="M 210,430 C 185,445 178,490 183,540" stroke="url(#specularGlow)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+                    </g>
 
                     <!-- RIGHT ARM -->
-                    <path d="M 385,420 C 425,435 440,500 430,565 C 425,595 405,595 400,565 C 400,520 398,470 385,420 Z" 
-                          fill="url(#volumetricBody)" stroke="#00f0ff" stroke-width="3" filter="url(#neonCyanGlow)" class="right-arm-limb"/>
+                    <g class="right-arm-group">
+                        <path d="M 385,420 C 425,435 440,500 430,565 C 425,595 405,595 400,565 C 400,520 398,470 385,420 Z" 
+                              fill="url(#volumetricBody3D)" stroke="url(#neonGreenStroke)" stroke-width="3" filter="url(#neonGreen3DGlow)" class="right-arm-limb"/>
+                        <!-- Arm 3D Highlight -->
+                        <path d="M 390,430 C 415,445 422,490 417,540" stroke="url(#specularGlow)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+                    </g>
 
                     <!-- TORSO / BODY -->
-                    <path d="M 220,410 C 190,465 190,620 300,690 C 410,620 410,465 380,410 Z" 
-                          fill="url(#volumetricBody)" stroke="#00f0ff" stroke-width="3.5" filter="url(#neonCyanGlow)" class="torso-body"/>
+                    <g class="torso-group">
+                        <path d="M 220,410 C 190,465 190,620 300,690 C 410,620 410,465 380,410 Z" 
+                              fill="url(#volumetricBody3D)" stroke="url(#neonGreenStroke)" stroke-width="3.5" filter="url(#neonGreen3DGlow)" class="torso-body"/>
+                        <!-- Torso Specular Highlight -->
+                        <path d="M 235,425 C 215,475 210,560 300,670" stroke="url(#specularGlow)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.45"/>
+                    </g>
 
-                    <!-- CHEST NEON CORE RING -->
+                    <!-- CHEST NEON CORE RING (Lime theme) -->
                     <g class="chest-core-neon">
-                        <circle cx="300" cy="525" r="50" stroke="#00f0ff" stroke-width="8.5" fill="none" filter="url(#neonCyanGlow)" class="chest-ring-out"/>
-                        <circle cx="300" cy="525" r="32" stroke="#aed534" stroke-width="4.5" fill="rgba(10,25,30,0.85)" filter="url(#neonLimeGlow)" class="chest-ring-in"/>
-                        <circle cx="300" cy="525" r="10" fill="#aed534" filter="url(#neonLimeGlow)" class="chest-center-core"/>
+                        <circle cx="300" cy="525" r="50" stroke="url(#neonGreenStroke)" stroke-width="8.5" fill="none" filter="url(#neonGreen3DGlow)" class="chest-ring-out"/>
+                        <!-- 3D torus shadow overlay -->
+                        <circle cx="300" cy="525" r="42" stroke="rgba(0,0,0,0.4)" stroke-width="4" fill="none"/>
+                        <circle cx="300" cy="525" r="32" stroke="#aed534" stroke-width="4.5" fill="url(#eyesVisorGrad)" filter="url(#neonGreen3DGlow)" class="chest-ring-in"/>
+                        <circle cx="300" cy="525" r="10" fill="#ffffff" filter="url(#neonGreen3DGlow)" class="chest-center-core"/>
                     </g>
 
                     <!-- HEAD & FACE -->
                     <g class="head-face-group">
                         <!-- Main Head Outer Shape -->
-                        <ellipse cx="300" cy="278" rx="135" ry="98" fill="url(#volumetricHead)" stroke="#00f0ff" stroke-width="3.5" filter="url(#neonCyanGlow)" class="head-shell"/>
+                        <ellipse cx="300" cy="278" rx="135" ry="98" fill="url(#volumetricHead3D)" stroke="url(#neonGreenStroke)" stroke-width="3.5" filter="url(#neonGreen3DGlow)" class="head-shell"/>
+                        <!-- Head Specular Highlight -->
+                        <ellipse cx="270" cy="235" rx="70" ry="25" transform="rotate(-15, 270, 235)" fill="url(#specularGlow)" opacity="0.6"/>
                         <!-- Inner Faceplate Visor -->
-                        <ellipse cx="300" cy="278" rx="105" ry="72" fill="url(#neonDarkGrad)" stroke="#aed534" stroke-width="2.5" filter="url(#neonLimeGlow)"/>
+                        <ellipse cx="300" cy="278" rx="105" ry="72" fill="url(#eyesVisorGrad)" stroke="#aed534" stroke-width="2.5" filter="url(#neonGreen3DGlow)"/>
                         
                         <!-- Eyes -->
-                        <ellipse cx="258" cy="272" rx="14" ry="24" fill="url(#eyeGlowCyan)" filter="url(#neonCyanGlow)" class="eye-glow"/>
-                        <ellipse cx="342" cy="272" rx="14" ry="24" fill="url(#eyeGlowCyan)" filter="url(#neonCyanGlow)" class="eye-glow"/>
+                        <ellipse cx="258" cy="272" rx="14" ry="24" fill="url(#neonGreenEyeGlow)" filter="url(#neonGreen3DGlow)" class="eye-glow"/>
+                        <ellipse cx="342" cy="272" rx="14" ry="24" fill="url(#neonGreenEyeGlow)" filter="url(#neonGreen3DGlow)" class="eye-glow"/>
                         
                         <!-- Smile -->
-                        <path d="M 282,310 Q 300,326 318,310" stroke="#aed534" stroke-width="4.5" stroke-linecap="round" fill="none" filter="url(#neonLimeGlow)" class="smile-glow"/>
+                        <path d="M 282,310 Q 300,326 318,310" stroke="#aed534" stroke-width="4.5" stroke-linecap="round" fill="none" filter="url(#neonGreen3DGlow)" class="smile-glow"/>
                     </g>
                 </g>
             </svg>
