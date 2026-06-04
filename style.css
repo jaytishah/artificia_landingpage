@@ -8298,11 +8298,11 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .background-robot-entity {
     position: absolute;
-    bottom: -100px; /* adjusted so the torso bottom tip touches the end of the section */
+    bottom: -121px; /* adjusted so the torso bottom tip touches the end of the section */
     left: -2%;
     right: auto;
-    width: 550px;
-    height: 730px;
+    width: 660px;
+    height: 880px;
     pointer-events: none;
     z-index: 2;
     opacity: 0.28;
@@ -8412,36 +8412,36 @@ h1, h2, h3, h4, h5, h6 {
 /* === RESPONSIVENESS === */
 @media (max-width: 1600px) {
     .background-robot-entity {
-        width: 500px;
-        height: 666px;
+        width: 600px;
+        height: 800px;
         left: -4%;
         right: auto;
         top: auto;
-        bottom: -92px;
+        bottom: -110px;
         opacity: 0.22;
     }
 }
 
 @media (max-width: 1400px) {
     .background-robot-entity {
-        width: 440px;
-        height: 586px;
+        width: 528px;
+        height: 703px;
         left: -6%;
         right: auto;
         top: auto;
-        bottom: -80px;
+        bottom: -97px;
         opacity: 0.18;
     }
 }
 
 @media (max-width: 1200px) {
     .background-robot-entity {
-        width: 380px;
-        height: 506px;
+        width: 456px;
+        height: 607px;
         left: -8%;
         right: auto;
         top: auto;
-        bottom: -70px;
+        bottom: -83px;
         opacity: 0.14;
     }
 }
@@ -8453,8 +8453,8 @@ h1, h2, h3, h4, h5, h6 {
         right: auto;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 360px;
-        height: 480px;
+        width: 432px;
+        height: 576px;
         opacity: 0.12;
         animation: floatRobotMobile 7s ease-in-out infinite alternate;
     }
@@ -8472,8 +8472,8 @@ h1, h2, h3, h4, h5, h6 {
         right: auto;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 280px;
-        height: 373px;
+        width: 336px;
+        height: 448px;
         opacity: 0.08;
         animation: floatRobotMobile 7s ease-in-out infinite alternate;
     }
