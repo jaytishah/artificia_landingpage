@@ -772,9 +772,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-neon-spring-container {
     position: absolute;
     top: 45%;
-    left: 50%;
+    left: 63%; /* shifted right so 30% of the pipe is behind the hero image card */
     right: auto;
-    transform: translate(-50%, -50%) rotate(-30deg);
+    transform: translate(-50%, -50%) scaleY(-1) rotate(30deg);
     width: 220px;
     height: 580px;
     z-index: 1; /* behind the showcase card and text */
@@ -791,13 +791,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes floatNeonSpringDiagonal {
     0% {
-        transform: translate(-50%, -48%) rotate(-28deg) scale(0.96);
+        transform: translate(-50%, -48%) scaleY(-1) rotate(28deg) scale(0.96);
     }
     50% {
-        transform: translate(-48%, -52%) rotate(-32deg) scale(1.03);
+        transform: translate(-48%, -52%) scaleY(-1) rotate(32deg) scale(1.03);
     }
     100% {
-        transform: translate(-52%, -49%) rotate(-29deg) scale(0.98);
+        transform: translate(-52%, -49%) scaleY(-1) rotate(29deg) scale(0.98);
     }
 }
 
@@ -806,7 +806,7 @@ h1, h2, h3, h4, h5, h6 {
     .hero-neon-spring-container {
         width: 190px;
         height: 500px;
-        left: 50%;
+        left: 63%; /* shifted right */
         top: 45%;
         opacity: 0.42;
     }
@@ -815,7 +815,7 @@ h1, h2, h3, h4, h5, h6 {
     .hero-neon-spring-container {
         width: 160px;
         height: 420px;
-        left: 50%;
+        left: 64%; /* shifted right */
         top: 45%;
         opacity: 0.35;
     }
@@ -825,14 +825,14 @@ h1, h2, h3, h4, h5, h6 {
         width: 140px;
         height: 370px;
         left: 50%;
-        top: 48%; /* Position between top text stack and bottom image stack */
-        opacity: 0.22;
-        transform: translate(-50%, -50%) rotate(-75deg); /* tilt almost horizontally to cross the vertical gap */
+        top: 65%; /* Shift down to overlap the top of the image card on mobile */
+        opacity: 0.25;
+        transform: translate(-50%, -50%) scaleY(-1) rotate(75deg); /* mirrored and tilted */
         animation: floatNeonSpringMobile 12s ease-in-out infinite alternate;
     }
     @keyframes floatNeonSpringMobile {
-        0% { transform: translate(-50%, -48%) rotate(-73deg) scale(0.95); }
-        100% { transform: translate(-50%, -52%) rotate(-77deg) scale(1.03); }
+        0% { transform: translate(-50%, -48%) scaleY(-1) rotate(73deg) scale(0.95); }
+        100% { transform: translate(-50%, -52%) scaleY(-1) rotate(77deg) scale(1.03); }
     }
 }
 @media (max-width: 576px) {
@@ -840,8 +840,8 @@ h1, h2, h3, h4, h5, h6 {
         width: 110px;
         height: 290px;
         left: 50%;
-        top: 48%;
-        opacity: 0.15;
+        top: 68%; /* Shift down to overlap the top of the image card on small mobile */
+        opacity: 0.18;
     }
 }
 
