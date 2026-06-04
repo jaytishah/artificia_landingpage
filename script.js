@@ -745,6 +745,11 @@ function initIndustryTabs() {
             }
         });
 
+        // Trigger reflow to restart CSS animations on content swap
+        tabContent.classList.remove('active-tab-animate');
+        void tabContent.offsetWidth; // Force reflow
+        tabContent.classList.add('active-tab-animate');
+
         // Load targeted industry details
         const data = industriesData[key];
         const hasImage = !!data.image;
@@ -756,7 +761,7 @@ function initIndustryTabs() {
                     <p>${data.desc}</p>
                     <span class="ind-apps-title"><i class="fas fa-layer-group text-lime"></i> AI WORKFLOW APPLICATIONS:</span>
                     <ul class="ind-list">
-                        ${data.apps.map(app => `<li><i class="fas fa-angles-right text-lime"></i> ${app}</li>`).join('')}
+                        ${data.apps.map((app, index) => `<li style="--item-index: ${index};"><i class="fas fa-angles-right text-lime"></i> ${app}</li>`).join('')}
                     </ul>
                 </div>
                 ${hasImage ? `
@@ -765,6 +770,7 @@ function initIndustryTabs() {
                     <div class="hud-corner hud-tr"></div>
                     <div class="hud-corner hud-bl"></div>
                     <div class="hud-corner hud-br"></div>
+                    <div class="ind-scanner-line"></div>
                     <img src="${data.image}" alt="${data.title} AI Integration Visual" class="ind-tab-img">
                 </div>
                 ` : ''}

@@ -3940,29 +3940,55 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-size: 0.88rem;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
     transition: all var(--transition-fast);
+}
+
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(174, 213, 52, 0.12), transparent);
+    transition: left 0.6s ease;
+    z-index: -1;
 }
 
 .tab-btn:hover {
     background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn:hover::before {
+    left: 100%;
 }
 
 .tab-btn.active {
     background: var(--lime);
     color: #000000;
     border-color: var(--lime);
-    box-shadow: 0 4px 15px var(--lime-glow);
+    box-shadow: 0 4px 18px var(--lime-glow);
 }
 
 .tab-content {
     padding: 40px;
     border: 1px solid var(--border-glow);
-    animation: fadeIn 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+.tab-content.active-tab-animate {
+    animation: tabFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabFadeInUp {
+    0% { opacity: 0; transform: translateY(15px) scale(0.995); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .ind-content-layout {
@@ -3999,6 +4025,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .ind-image-wrapper:hover .ind-tab-img {
     transform: scale(1.05);
+}
+
+/* Tech scan line overlay for Industry tabs image */
+.ind-scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--lime), transparent);
+    box-shadow: 0 0 15px var(--lime);
+    z-index: 4;
+    animation: scanIndImage 4s linear infinite;
+    pointer-events: none;
+}
+@keyframes scanIndImage {
+    0% { top: 0%; opacity: 0; }
+    5% { opacity: 1; }
+    95% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
 }
 
 @media (max-width: 991px) {
@@ -4047,6 +4093,30 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     gap: 8px;
+    opacity: 0;
+    animation: indItemLoad 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--item-index, 0) * 75ms + 100ms);
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+@keyframes indItemLoad {
+    0% { opacity: 0; transform: translateX(-8px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.ind-list li:hover {
+    transform: translateX(5px);
+    color: #ffffff;
+}
+
+.ind-list li i {
+    transition: transform 0.25s ease;
+}
+
+.ind-list li:hover i {
+    transform: translateX(3px);
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--lime);
 }
 
 .ind-impact-card {
