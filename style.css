@@ -864,9 +864,13 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 5;
     display: grid;
     grid-template-columns: 52% 48%;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
-    padding: 60px 0 100px;
+    padding: 80px 5% 120px;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .hero-copy-column {
@@ -909,11 +913,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-split-title {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 900;
     line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin: 0 0 20px;
+    letter-spacing: -1.8px;
+    margin: 0 0 24px;
     color: #FFFFFF;
 }
 
@@ -7468,5 +7472,157 @@ h1, h2, h3, h4, h5, h6 {
     }
     .map-wrapper iframe {
         height: 300px !important;
+    }
+}
+
+/* ==========================================================================
+   AI Cybernetic HUD System (Hero Section Dramatic Animations)
+   ========================================================================== */
+.hud-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.28;
+    filter: drop-shadow(0 0 10px rgba(174, 213, 52, 0.2));
+}
+
+.hud-circle-outer {
+    width: 620px;
+    height: 620px;
+    border: 1.5px dashed rgba(174, 213, 52, 0.4);
+    animation: rotateHUDClockwise 45s linear infinite;
+}
+
+.hud-circle-mid {
+    width: 530px;
+    height: 530px;
+    border: 2px dotted rgba(0, 240, 255, 0.35);
+    animation: rotateHUDCounterClockwise 30s linear infinite;
+}
+
+.hud-circle-inner {
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(191, 94, 255, 0.25);
+    border-left-color: rgba(174, 213, 52, 0.6);
+    border-right-color: rgba(0, 240, 255, 0.6);
+    animation: rotateHUDClockwise 15s linear infinite;
+}
+
+@keyframes rotateHUDClockwise {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateHUDCounterClockwise {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* Sci-fi HUD Corners */
+.hud-data-corners {
+    position: absolute;
+    inset: -20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.corner-brac {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgba(174, 213, 52, 0.45);
+    animation: cornerPulse 2.5s ease-in-out infinite alternate;
+}
+
+.corner-brac.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-brac.top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-brac.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-brac.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+@keyframes cornerPulse {
+    0% {
+        transform: scale(0.98);
+        border-color: rgba(174, 213, 52, 0.3);
+        box-shadow: 0 0 5px rgba(174, 213, 52, 0.1);
+    }
+    100% {
+        transform: scale(1.02);
+        border-color: rgba(0, 240, 255, 0.7);
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    }
+}
+
+/* Hologram Overlay Scanner Effect */
+.hologram-overlay {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 3px,
+        rgba(174, 213, 52, 0.04) 4px,
+        rgba(174, 213, 52, 0.04) 5px
+    );
+    pointer-events: none;
+    z-index: 6;
+    animation: hologramFlicker 0.15s infinite;
+    opacity: 0.85;
+}
+
+@keyframes hologramFlicker {
+    0% { opacity: 0.82; }
+    50% { opacity: 0.88; }
+    100% { opacity: 0.82; }
+}
+
+@media (max-width: 1200px) {
+    .hud-circle-outer {
+        width: 500px;
+        height: 500px;
+    }
+    .hud-circle-mid {
+        width: 420px;
+        height: 420px;
+    }
+    .hud-circle-inner {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hud-circle {
+        display: none;
+    }
+    .hud-data-corners {
+        inset: -10px;
     }
 }
