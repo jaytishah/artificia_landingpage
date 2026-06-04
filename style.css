@@ -7723,3 +7723,134 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 }
+
+/* ==========================================================================
+   Background Robot Entity Styling & Animations
+   ========================================================================== */
+.background-robot-entity {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    width: 720px;
+    height: 720px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.12; /* Subtle, sophisticated backdrop blending */
+    mix-blend-mode: screen;
+    animation: floatRobot 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatRobot {
+    0% { transform: translateY(-48%) rotate(-1deg); }
+    100% { transform: translateY(-52%) rotate(1deg); }
+}
+
+.bg-robot-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Robot facial element anims */
+.robot-eye-left, .robot-eye-right {
+    animation: robotEyePulse 3.5s ease-in-out infinite alternate;
+}
+.robot-eye-right {
+    animation-delay: 0.75s;
+}
+
+@keyframes robotEyePulse {
+    0% {
+        opacity: 0.35;
+        fill: rgba(0, 240, 255, 0.05);
+        stroke: rgba(0, 240, 255, 0.35);
+    }
+    100% {
+        opacity: 0.95;
+        fill: rgba(0, 240, 255, 0.25);
+        stroke: rgba(0, 240, 255, 0.95);
+        filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.75));
+    }
+}
+
+/* Equalizer soundwave speech grid */
+.speech-wave line {
+    transform-origin: center;
+    animation: robotSpeech 1.6s ease-in-out infinite alternate;
+}
+.speech-wave line:nth-child(1) { animation-duration: 1.1s; animation-delay: 0.1s; }
+.speech-wave line:nth-child(2) { animation-duration: 1.4s; animation-delay: 0.4s; }
+.speech-wave line:nth-child(3) { animation-duration: 0.8s; animation-delay: 0.2s; }
+.speech-wave line:nth-child(4) { animation-duration: 1.3s; animation-delay: 0.5s; }
+.speech-wave line:nth-child(5) { animation-duration: 1.0s; animation-delay: 0.3s; }
+.speech-wave line:nth-child(6) { animation-duration: 1.5s; animation-delay: 0.1s; }
+.speech-wave line:nth-child(7) { animation-duration: 0.9s; animation-delay: 0.6s; }
+.speech-wave line:nth-child(8) { animation-duration: 1.2s; animation-delay: 0.2s; }
+
+@keyframes robotSpeech {
+    0% { transform: scaleY(0.25); }
+    100% { transform: scaleY(1.4); }
+}
+
+/* Neural Cortex Node pulsing */
+.neural-node {
+    animation: robotNodePulse 2.2s ease-in-out infinite alternate;
+}
+.node-1 { animation-delay: 0s; }
+.node-2 { animation-delay: 0.5s; }
+.node-3 { animation-delay: 1.1s; }
+.node-4 { animation-delay: 1.6s; }
+
+@keyframes robotNodePulse {
+    0% {
+        transform: scale(0.75);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 1;
+        filter: drop-shadow(0 0 6px var(--lime));
+    }
+}
+
+/* Responsiveness for background robot */
+@media (max-width: 1400px) {
+    .background-robot-entity {
+        width: 600px;
+        height: 600px;
+        right: -5%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .background-robot-entity {
+        width: 500px;
+        height: 500px;
+        right: -8%;
+        opacity: 0.08;
+    }
+}
+
+@media (max-width: 991px) {
+    .background-robot-entity {
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+        width: 450px;
+        height: 450px;
+        opacity: 0.06;
+        animation: floatRobotMobile 8s ease-in-out infinite alternate;
+    }
+    
+    @keyframes floatRobotMobile {
+        0% { transform: translate(-50%, -48%) rotate(-1deg); }
+        100% { transform: translate(-50%, -52%) rotate(1deg); }
+    }
+}
+
+@media (max-width: 576px) {
+    .background-robot-entity {
+        display: none;
+    }
+}
