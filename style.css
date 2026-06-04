@@ -2753,6 +2753,109 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
+/* High-tech background animations for We Transform Section */
+.different-bg-animations {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Shifting Ambient Aurora Spotlights */
+.diff-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.38;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    animation: diffBlobFloat 22s infinite ease-in-out alternate;
+}
+
+.diff-blob-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(174, 213, 52, 0.12) 0%, transparent 75%);
+    top: -10%;
+    left: 8%;
+    animation-duration: 24s;
+}
+
+.diff-blob-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.09) 0%, transparent 75%);
+    bottom: -15%;
+    right: 12%;
+    animation-duration: 28s;
+    animation-delay: -6s;
+}
+
+.diff-blob-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(191, 94, 255, 0.07) 0%, transparent 75%);
+    top: 35%;
+    left: 55%;
+    animation-duration: 20s;
+    animation-delay: -12s;
+}
+
+@keyframes diffBlobFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(70px, -50px) scale(1.12); }
+    100% { transform: translate(-50px, 60px) scale(0.92); }
+}
+
+/* Scanning grid laser line */
+.grid-scan-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 5%, rgba(174, 213, 52, 0.22) 35%, #00f0ff 50%, rgba(174, 213, 52, 0.22) 65%, transparent 95%);
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(174, 213, 52, 0.25);
+    animation: gridScan 12s linear infinite;
+}
+
+@keyframes gridScan {
+    0% { top: 0%; opacity: 0; }
+    5% { opacity: 0.75; }
+    95% { opacity: 0.75; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Floating tech data nodes */
+.diff-data-node {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.04);
+    font-size: 1.15rem;
+    font-family: var(--font-heading), monospace;
+    font-weight: 700;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: driftDataNode 16s infinite ease-in-out alternate;
+}
+
+.dnode-1 { top: 15%; left: 6%; animation-duration: 18s; color: rgba(174, 213, 52, 0.08); font-size: 1.4rem; text-shadow: 0 0 10px rgba(174, 213, 52, 0.1); }
+.dnode-2 { top: 38%; left: 20%; animation-duration: 22s; animation-delay: -3s; color: rgba(0, 240, 255, 0.06); }
+.dnode-3 { top: 68%; left: 10%; animation-duration: 20s; animation-delay: -7s; color: rgba(191, 94, 255, 0.07); font-size: 1.3rem; }
+.dnode-4 { top: 18%; right: 10%; animation-duration: 15s; color: rgba(0, 240, 255, 0.08); font-weight: 900; letter-spacing: 1px; }
+.dnode-5 { top: 48%; right: 18%; animation-duration: 25s; animation-delay: -4s; color: rgba(174, 213, 52, 0.06); font-size: 1.25rem; }
+.dnode-6 { top: 78%; right: 7%; animation-duration: 19s; animation-delay: -10s; color: rgba(191, 94, 255, 0.06); }
+
+@keyframes driftDataNode {
+    0% { transform: translate(0, 0) rotate(0deg) scale(0.9); opacity: 0.25; }
+    50% { opacity: 0.75; }
+    100% { transform: translate(45px, -45px) rotate(15deg) scale(1.1); opacity: 0.25; }
+}
+
 .different-section > .container {
     position: relative;
     z-index: 2;
