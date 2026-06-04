@@ -8306,7 +8306,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 730px;
     pointer-events: none;
     z-index: 2;
-    opacity: 0.58;
+    opacity: 0.28;
     animation: floatRobot3D 7s ease-in-out infinite alternate;
 }
 
@@ -8417,7 +8417,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 666px;
         left: -4%;
         right: auto;
-        opacity: 0.48;
+        opacity: 0.22;
     }
 }
 
@@ -8427,7 +8427,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 586px;
         left: -6%;
         right: auto;
-        opacity: 0.42;
+        opacity: 0.18;
     }
 }
 
@@ -8437,7 +8437,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 506px;
         left: -8%;
         right: auto;
-        opacity: 0.36;
+        opacity: 0.14;
     }
 }
 
@@ -8449,7 +8449,7 @@ h1, h2, h3, h4, h5, h6 {
         transform: translate(-50%, -50%);
         width: 360px;
         height: 480px;
-        opacity: 0.32;
+        opacity: 0.12;
         animation: floatRobotMobile 7s ease-in-out infinite alternate;
     }
     
@@ -8467,7 +8467,7 @@ h1, h2, h3, h4, h5, h6 {
         transform: translate(-50%, -50%);
         width: 280px;
         height: 373px;
-        opacity: 0.26;
+        opacity: 0.08;
         animation: floatRobotMobile 7s ease-in-out infinite alternate;
     }
 }
