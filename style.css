@@ -7729,16 +7729,28 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .background-robot-entity {
     position: absolute;
-    top: 50%;
-    right: -5%;
+    top: 45%;
+    left: -2%;
+    right: auto;
     transform: translateY(-50%);
-    width: 900px;
-    height: 1100px;
+    width: 600px;
+    height: 800px;
     pointer-events: none;
     z-index: 2;
-    opacity: 0.22;
-    mix-blend-mode: screen;
+    opacity: 0.32;
     animation: floatRobot 12s ease-in-out infinite alternate;
+}
+
+/* Hide other body parts to show the robot only up to its neck */
+.robot-torso,
+.robot-arm-left,
+.robot-arm-right,
+.robot-leg-left,
+.robot-leg-right,
+.robot-waist,
+.sparkle-field,
+.ambient-particles {
+    display: none !important;
 }
 
 @keyframes floatRobot {
@@ -7970,40 +7982,43 @@ h1, h2, h3, h4, h5, h6 {
 /* === RESPONSIVENESS === */
 @media (max-width: 1600px) {
     .background-robot-entity {
-        width: 750px;
-        height: 920px;
-        right: -8%;
-        opacity: 0.18;
+        width: 500px;
+        height: 666px;
+        left: -4%;
+        right: auto;
+        opacity: 0.25;
     }
 }
 
 @media (max-width: 1400px) {
     .background-robot-entity {
-        width: 650px;
-        height: 800px;
-        right: -10%;
-        opacity: 0.15;
+        width: 440px;
+        height: 586px;
+        left: -6%;
+        right: auto;
+        opacity: 0.2;
     }
 }
 
 @media (max-width: 1200px) {
     .background-robot-entity {
-        width: 550px;
-        height: 680px;
-        right: -12%;
-        opacity: 0.12;
+        width: 380px;
+        height: 506px;
+        left: -8%;
+        right: auto;
+        opacity: 0.16;
     }
 }
 
 @media (max-width: 991px) {
     .background-robot-entity {
-        top: 55%;
+        top: 28%;
         right: auto;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 500px;
-        height: 620px;
-        opacity: 0.07;
+        width: 360px;
+        height: 480px;
+        opacity: 0.14;
         animation: floatRobotMobile 12s ease-in-out infinite alternate;
     }
     
@@ -8015,6 +8030,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 576px) {
     .background-robot-entity {
-        display: none;
+        top: 25%;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 280px;
+        height: 373px;
+        opacity: 0.1;
+        animation: floatRobotMobile 12s ease-in-out infinite alternate;
     }
 }
