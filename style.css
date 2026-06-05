@@ -408,12 +408,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 
 .logo-wrapper {
     display: flex;
     flex-direction: column;
-    margin-left: -12px;
+    margin-left: -7px;
 }
 
 .logo-text {
