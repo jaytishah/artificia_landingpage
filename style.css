@@ -8304,7 +8304,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .background-robot-entity {
     position: absolute;
-    bottom: -121px; /* adjusted so the torso bottom tip touches the end of the section */
+    bottom: -91px; /* shifted slightly upwards */
     left: -2%;
     right: auto;
     width: 660px;
@@ -8423,7 +8423,7 @@ h1, h2, h3, h4, h5, h6 {
         left: -4%;
         right: auto;
         top: auto;
-        bottom: -110px;
+        bottom: -80px; /* shifted slightly upwards */
         opacity: 0.22;
     }
 }
@@ -8435,7 +8435,7 @@ h1, h2, h3, h4, h5, h6 {
         left: -6%;
         right: auto;
         top: auto;
-        bottom: -97px;
+        bottom: -67px; /* shifted slightly upwards */
         opacity: 0.18;
     }
 }
@@ -8447,14 +8447,14 @@ h1, h2, h3, h4, h5, h6 {
         left: -8%;
         right: auto;
         top: auto;
-        bottom: -83px;
+        bottom: -53px; /* shifted slightly upwards */
         opacity: 0.14;
     }
 }
 
 @media (max-width: 991px) {
     .background-robot-entity {
-        top: 28%;
+        top: 25%; /* shifted slightly upwards */
         bottom: auto;
         right: auto;
         left: 50%;
@@ -8473,7 +8473,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 576px) {
     .background-robot-entity {
-        top: 25%;
+        top: 22%; /* shifted slightly upwards */
         bottom: auto;
         right: auto;
         left: 50%;
